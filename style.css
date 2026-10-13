@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-image: url('фон.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.site-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(15, 10, 25, 0.4) 0%, rgba(5, 5, 15, 0.1) 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 6% 80px 6%; 
+    
+    background: linear-gradient(to bottom, 
+        rgba(100, 60, 71, 1) 0%, 
+        rgba(100, 60, 71, 0.7) 40%, 
+        rgba(100, 60, 71, 0) 100%);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.85;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: opacity 0.2s ease;
+}
+
+.main-nav a:hover {
+    opacity: 1;
+}
+
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6% 80px 6%;
+    gap: 40px;
+}
+
+.hero-text-block {
+    flex: 1;
+    max-width: 600px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text-block h1 {
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+.hero-text-block h2 {
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+.hero-text-block p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 14px 35px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 14px 35px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;   
+    position: relative;
+    overflow: visible; 
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 24px;
+    pointer-events: none; 
+    user-select: none;
+    z-index: 10;
+    transform: translate(-50%, -50%); 
+    animation: flyUpAndFade 1s forwards ease-out;
+}
+
+@keyframes flyUpAndFade {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-30%, -80px) scale(1.2); 
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-70%, -160px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 24px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    transform: translate(-50%, -50%); 
+    animation: flyUpAndFade 1s forwards ease-out; 
+}
+
+
+.hero-video-block {
+    flex: 1;
+    max-width: 550px; 
+    display: flex;
+    justify-content: flex-end; /
+}
+
+.hero-video-block video {
+    width: 250%;
+    max-height: 350px;
+    border-radius: 8px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    outline: none;
+    background-color: #000000; 
+}
+
+/* Абсолютно черный подвал */
+.site-footer {
+    background-color: #643c47;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 14px;
+}
+
+.copyright {
+    color: #ffffff;
+}
+
+.footer-info {
+    display: flex;
+}
+
+.footer-text {
+    color: #ffffff;
+    font-size: 13px;
+}
+.footer-year {
+    margin-left: 20px; 
+}
+
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero-text-block {
+        max-width: 100%;
+    }
+
+    .hero-text-block h1 {
+        font-size: 52px;
+    }
+
+    .hero-video-block {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .site-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .main-nav a {
+        margin: 0;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

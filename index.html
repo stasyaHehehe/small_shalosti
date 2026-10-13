@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гончарук А.С.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="site-wrapper">
+        
+        <header class="site-header">
+            <div class="logo">Web-дизайн</div>
+            
+            <nav class="main-nav">
+                <a href="#">Концепция</a>
+                <a href="#">Аниматик</a>
+                <a href="#">Создание анимации</a>
+                <a href="#">Презентация</a>
+            </nav>
+            
+        </header>
+
+        <main class="main-content">
+            
+            <div class="hero-text-block">
+                <h1>СОЗДАНИЕ АНИМАЦИИ</h1>
+                <h2>WEB-ДИЗАЙН</h2>
+                <p>«Маленькие шалости» — это короткая и трогательная двухмерная анимация, повествующая о забавных буднях очаровательного белого кота. Круглый, словно облако, пушистый герой с огромными, невероятно выразительными глазами то и дело поддается кошачьему любопытству, устраивая легкий беспорядок в доме.</p>
+                <p>Этой анимацией мне хотелось бы передать атмосферу домашнего уюта, тепла и непосредственности, заставляя искренне улыбнуться над проказами главного пушистика.</p>
+
+                <a href="#" class="btn-hero">Поставьте лайк, пожалуйста ^~^</a>
+            </div>
+
+            <div class="hero-video-block">
+                <video controls>
+                    <source src="Video_Гончарук_А.С._4-МЗ-5.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает воспроизведение видео.
+                </video>
+            </div>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="copyright">
+                Гончарук Анастасия
+            </div>
+            <div class="footer-info">
+                <span>Группа 4-МЗ-5</span>
+                <span class="footer-year">2026 год</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.querySelector('.btn-hero').addEventListener('click', function(e) {
+            e.preventDefault();
+            const heartTypes = ['💖', '💕'];
+      
+         const createRandomHeart = (offsetX, delay) => {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('floating-heart');
+                    
+                    const randomHeart = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+                    heart.innerHTML = randomHeart;
+
+                    const rect = this.getBoundingClientRect();
+                    
+                    const x = (e.clientX - rect.left) + offsetX;
+                    const y = e.clientY - rect.top;
+
+                    heart.style.left = x + 'px';
+                    heart.style.top = y + 'px';
+
+                    this.appendChild(heart);
+
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 1000);
+                }, delay); 
+            };
+
+  
+            createRandomHeart(10, 0);       
+            createRandomHeart(-10, 500);   
+        });
+    </script>
+
+</body>
+</html>
